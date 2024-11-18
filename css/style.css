@@ -124,3 +124,62 @@ body {
 .calculator__equals:hover {
     background-color: hsl(5.8, 64%, 65.1%);
 }
+
+p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+span {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    display: inline-block;
+    width: 10rem;
+}
+
+span label {
+    margin-left: 1rem;
+    background: var(--clr-bg-700);
+    padding: 0.5rem;
+    border-radius: 16px;
+    position: relative;
+    display: inline-block;
+    width: 60%;
+}
+
+.ball {
+    display: inline-block;
+    position: absolute;
+    top: 6px;
+    left: 5px;
+    width: 20px;
+    height: 20px;
+    background: red;
+    border-radius: 50%;
+    transition: left 0.2s ease-in-out;
+}
+
+input[type="radio"] {
+    appearance: none;
+    display: inline-block;
+    width: 30%;
+    height: 10px;
+    margin-inline: 0;
+}
+
+input[type="radio"]:hover {
+    cursor: pointer;
+}
+
+input[type="radio"]:first-of-type:checked ~ .ball {
+    left: 5px;
+}
+
+input[type="radio"]:nth-of-type(2):checked ~ .ball {
+    left: 40px;
+}
+
+input[type="radio"]:nth-of-type(3):checked ~ .ball {
+    left: 70px;
+}
