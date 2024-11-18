@@ -1,13 +1,22 @@
 @import "./variables.css";
 @import "./reset.css";
 
+@font-face {
+    font-family: "League Spartan";
+    src: url("../fonts/LeagueSpartan-Bold.woff2") format("woff2");
+    font-weight: 700;
+    font-display: swap;
+}
+
 body {
+    color: var(--clr-text-100);
     background: var(--clr-bg-500);
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: var(--fs-base);
     font-weight: var(--fw-base);
+    font-family: "League Spartan";
 }
 
 .calculator {
@@ -23,16 +32,18 @@ body {
     border-radius: 8px;
     text-align: right;
     padding: 1em;
+    white-space: collapse;
 }
 
 .calculator__buttons {
     border-radius: 8px;
     background: var(--clr-bg-700);
-    padding: 0.5em;
+    padding: 0.75em;
     margin-top: 1rem;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 0.5em;
+    gap: 0.75em;
+    font-size: 2rem;
 }
 
 .calculator__delete {
@@ -83,6 +94,12 @@ body {
     border: none;
     border-bottom: 5px solid var(--clr-key-300);
     border-radius: 8px;
+    padding: 0.5em 0 0.25em 0;
+    cursor: pointer;
+}
+
+.calculator__buttons > *:hover {
+    background: var(--clr-text-100);
 }
 
 .calculator__equals {
@@ -97,4 +114,13 @@ body {
     background: var(--clr-key-400);
     border-bottom: 5px solid var(--clr-key-500);
     text-transform: uppercase;
+}
+
+.calculator__reset:hover,
+.calculator__delete:hover {
+    background: hsl(225, 27.7%, 74.5%);
+}
+
+.calculator__equals:hover {
+    background-color: hsl(5.8, 64%, 65.1%);
 }
