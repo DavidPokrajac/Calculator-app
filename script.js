@@ -1,4 +1,5 @@
-let textArea = document.querySelector(".calculator__display");
+console.log("Hi");
+let textArea = document.querySelector("textarea");
 let numbers = document.querySelectorAll(".calculator__number");
 let mathOperation = document.querySelectorAll(".calculator__math-operation");
 let equalsTo = document.querySelector(".calculator__equals");
@@ -15,6 +16,7 @@ Array.from(mathOperation).forEach((operation) => {
 
 function displayNumber(event) {
     const target = event.target;
+    console.log("hey");
     if (
         (target.textContent === "0" && textArea.textContent === "") ||
         (target.textContent === "." && textArea.textContent === "")
@@ -23,6 +25,7 @@ function displayNumber(event) {
     }
     result += target.textContent;
     textArea.textContent += target.textContent;
+    console.log(textArea.textContent);
 }
 
 function displayOperator(event) {

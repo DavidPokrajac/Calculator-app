@@ -12,10 +12,11 @@
         />
 
         <title>Frontend Mentor | Calculator app</title>
+        <link rel="stylesheet" href="css/style.css" />
     </head>
     <body>
         <div class="calculator">
-            <textarea class="calculator__display"></textarea>
+            <textarea class="calculator__display" rows="1"></textarea>
             <div class="calculator__buttons">
                 <button class="calculator__number">9</button>
                 <button class="calculator__number">8</button>
@@ -32,11 +33,36 @@
                 </button>
                 <button class="calculator__equals">=</button>
                 <button class="calculator__delete" onClick="del()">del</button>
-                <button class="calculator__math-operation">+</button>
-                <button class="calculator__math-operation">-</button>
-                <button class="calculator__math-operation">*</button>
-                <button class="calculator__math-operation">/</button>
-                <button class="calculator__math-operation">.</button>
+                <button
+                    class="calculator__math-operation"
+                    data-operator="addition"
+                >
+                    +
+                </button>
+                <button
+                    class="calculator__math-operation"
+                    data-operator="subtraction"
+                >
+                    -
+                </button>
+                <button
+                    class="calculator__math-operation"
+                    data-operator="multiplication"
+                >
+                    *
+                </button>
+                <button
+                    class="calculator__math-operation"
+                    data-operator="division"
+                >
+                    /
+                </button>
+                <button
+                    class="calculator__math-operation"
+                    data-operator="decimal-point"
+                >
+                    .
+                </button>
             </div>
         </div>
         <script src="script.js"></script>
