@@ -1,7 +1,7 @@
-let textArea = document.querySelector("textarea");
-let numbers = document.querySelectorAll(".number");
-let mathOperation = document.querySelectorAll(".math-operation");
-let equalsTo = document.querySelector(".equals");
+let textArea = document.querySelector(".calculator__display");
+let numbers = document.querySelectorAll(".calculator__number");
+let mathOperation = document.querySelectorAll(".calculator__math-operation");
+let equalsTo = document.querySelector(".calculator__equals");
 let result = "";
 let isCalculated = false;
 
@@ -47,6 +47,7 @@ function displayOperator(event) {
 
 equalsTo.addEventListener("click", () => {
     checkLastValue(textArea.textContent[textArea.textContent.length - 1]);
+    console.log(textArea.textContent);
     textArea.textContent = eval(result);
     isCalculated = true;
 });
