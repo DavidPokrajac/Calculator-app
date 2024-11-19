@@ -1,4 +1,5 @@
 :root {
+    /* Theme 1 */
     --clr-bg-500: hsl(222, 26%, 31%);
     --clr-bg-700: hsl(223, 31%, 20%);
     --clr-bg-800: hsl(224, 36%, 15%);
@@ -12,6 +13,21 @@
 
     --clr-text-400: hsl(221, 14%, 31%);
     --clr-text-100: hsl(0, 0%, 100%);
+
+    /* Theme 2 */
+    --clr-theme-2-bg-100: hsl(0, 5%, 81%);
+    --clr-theme-2-bg-200: hsl(0, 0%, 90%);
+    --clr-theme-2-bg-300: hsl(0, 0%, 93%);
+
+    --clr-theme-2-key-400: hsl(185, 42%, 37%);
+    --clr-theme-2-key-500: hsl(185, 58%, 25%);
+    --clr-theme-2-key-600: hsl(25, 98%, 40%);
+    --clr-theme-2-key-700: hsl(25, 99%, 27%);
+    --clr-theme-2-key-100: hsl(45, 7%, 89%);
+    --clr-theme-2-key-300: hsl(35, 11%, 61%);
+
+    --clr-theme-2-text-500: hsl(60, 10%, 19%);
+    --clr-theme-2-text-100: hsl(0, 0%, 100%);
 
     --fs-base: 32px;
     --fw-base: 700;
