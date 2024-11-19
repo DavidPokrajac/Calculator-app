@@ -18,19 +18,19 @@
 
 .calculator__buttons--theme-two > * {
     background: var(--clr-theme-2-key-100);
-    border-bottom: 5px solid var(--clr-theme-2-key-300);
+    box-shadow: 0 5px 0 var(--clr-theme-2-key-300);
 }
 
 .calculator__equals--theme-two {
     background: var(--clr-theme-2-key-600);
-    border-bottom: 5px solid var(--clr-theme-2-key-700);
+    box-shadow: 0 5px 0 var(--clr-theme-2-key-700);
     color: var(----clr-theme-2-text-100);
 }
 
 .calculator__delete--theme-two,
 .calculator__reset--theme-two {
     background: var(--clr-theme-2-key-400);
-    border-bottom: 5px solid var(--clr-theme-2-key-500);
+    box-shadow: 0 5px 0 var(--clr-theme-2-key-500);
     color: var(----clr-theme-2-text-100);
 }
 
@@ -40,4 +40,21 @@
 
 .ball__--theme-two {
     background: var(--clr-theme-2-key-600);
+}
+
+.calculator__delete--theme-two,
+.calculator__reset--theme-two,
+.calculator__equals--theme-two {
+    color: var(--clr-theme-2-text-100);
+}
+
+.calculator__delete--theme-two:hover,
+.calculator__reset--theme-two:hover {
+    background: hsl(185.5, 31.7%, 52.9%);
+}
+
+.ball__--theme-two:hover,
+.calculator__equals--theme-two:hover {
+    background: hsla(25, 98%, 40%, 0.8);
+    cursor: pointer;
 }

@@ -92,7 +92,7 @@
     color: var(--clr-text-400);
     background: var(--clr-key-100);
     border: none;
-    border-bottom: 5px solid var(--clr-key-300);
+    box-shadow: 0 5px 0 var(--clr-key-300);
     border-radius: 8px;
     padding: 0.5em 0 0.25em 0;
     cursor: pointer;
@@ -105,14 +105,14 @@
 .calculator__equals {
     color: var(--clr-text-100);
     background: var(--clr-key-600);
-    border-bottom: 5px solid var(--clr-key-700);
+    box-shadow: 0 5px 0 var(--clr-key-700);
 }
 
 .calculator__reset,
 .calculator__delete {
     color: var(--clr-text-100);
     background: var(--clr-key-400);
-    border-bottom: 5px solid var(--clr-key-500);
+    box-shadow: 0 5px 0 var(--clr-key-500);
     text-transform: uppercase;
 }
 
@@ -182,8 +182,4 @@ input[type="radio"]:nth-of-type(2):checked ~ .ball {
 
 input[type="radio"]:nth-of-type(3):checked ~ .ball {
     left: 70px;
-}
-
-input[type="radio"]:nth-of-type(2):checked body {
-    background-color: red;
 }

@@ -29,6 +29,21 @@
     --clr-theme-2-text-500: hsl(60, 10%, 19%);
     --clr-theme-2-text-100: hsl(0, 0%, 100%);
 
+    /* Theme 3 */
+    --clr-theme-3-bg-800: hsl(268, 75%, 9%);
+    --clr-theme-3-bg-900: hsl(268, 71%, 12%);
+
+    --clr-theme-3-key-200: hsl(281, 89%, 26%);
+    --clr-theme-3-key-100: hsl(285, 91%, 52%);
+    --clr-theme-3-key-400: hsl(176, 100%, 44%);
+    --clr-theme-3-key-300: hsl(177, 92%, 70%);
+    --clr-theme-3-key-800: hsl(268, 47%, 21%);
+    --clr-theme-3-key-700: hsl(290, 70%, 36%);
+
+    --clr-theme-3-text-300: hsl(52, 100%, 62%);
+    --clr-theme-3-text-800: hsl(198, 20%, 13%);
+    --clr-theme-3-text-100: hsl(0, 0%, 100%);
+
     --fs-base: 32px;
     --fw-base: 700;
 }
