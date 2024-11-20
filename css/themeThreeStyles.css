@@ -40,6 +40,7 @@
 
 .ball__--theme-three {
     background: var(--clr-theme-3-key-400);
+    left: calc(100% - 25px);
 }
 
 .calculator__delete--theme-three,

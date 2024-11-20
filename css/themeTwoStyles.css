@@ -40,6 +40,7 @@
 
 .ball__--theme-two {
     background: var(--clr-theme-2-key-600);
+    left: calc((75px - 20px) / 2);
 }
 
 .calculator__delete--theme-two,

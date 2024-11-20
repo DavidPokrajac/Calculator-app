@@ -57,13 +57,13 @@ document.addEventListener("DOMContentLoaded", () => {
     function changeTheme(event) {
         if (event.target.value === "theme-2") {
             themeChange(event.target.value, "--theme-two");
-            localStorage.setItem("input-last-checked", event.target.value);
+            localStorage.setItem("input-last-checked", "theme-2");
         } else if (event.target.value === "theme-3") {
             themeChange(event.target.value, "--theme-three");
-            localStorage.setItem("input-last-checked", event.target.value);
+            localStorage.setItem("input-last-checked", "theme-3");
         } else if (event.target.value === "theme-1") {
             themeChange(event.target.value, "");
-            localStorage.setItem("input-last-checked", event.target.value);
+            localStorage.setItem("input-last-checked", "theme-1");
         }
     }
 });
