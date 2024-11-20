@@ -42,16 +42,20 @@ document.addEventListener("DOMContentLoaded", () => {
             label.className = "label";
             ball.className = "ball";
         }
-        document.body.className = "body body" + theme;
-        calcDisplay.className =
-            "calculator__display calculator__display" + theme;
-        calcButtons.className =
-            "calculator__buttons calculator__buttons" + theme;
-        calcDelete.className = "calculator__delete calculator__delete" + theme;
-        calcReset.className = "calculator__reset calculator__reset" + theme;
-        calcEquals.className = "calculator__equals calculator__equals" + theme;
-        label.className = "label label__" + theme;
-        ball.className = "ball ball__" + theme;
+        if (value === "theme-2" || value === "theme-3") {
+            document.body.className = "body body" + theme;
+            calcDisplay.className =
+                "calculator__display calculator__display" + theme;
+            calcButtons.className =
+                "calculator__buttons calculator__buttons" + theme;
+            calcDelete.className =
+                "calculator__delete calculator__delete" + theme;
+            calcReset.className = "calculator__reset calculator__reset" + theme;
+            calcEquals.className =
+                "calculator__equals calculator__equals" + theme;
+            label.className = "label label__" + theme;
+            ball.className = "ball ball__" + theme;
+        }
     }
 
     function changeTheme(event) {
