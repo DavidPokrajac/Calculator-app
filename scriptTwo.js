@@ -29,7 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 themeChange(e.value, "--theme-three");
                 break;
         }
-        console.log(e.value);
     }
 
     function themeChange(value, theme) {
