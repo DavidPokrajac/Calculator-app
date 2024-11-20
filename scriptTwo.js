@@ -1,64 +1,70 @@
-let secondInput = document.querySelectorAll("input[type='radio']");
-let calcDisplay = document.querySelector("textarea");
-let calcButtons = document.querySelector(".calculator__buttons");
-let calcReset = document.querySelector(".calculator__reset");
-let calcDelete = document.querySelector(".calculator__delete");
-let calcEquals = document.querySelector(".calculator__equals");
-let label = document.querySelector(".label");
-let ball = document.querySelector(".ball");
+document.addEventListener("DOMContentLoaded", () => {
+    let secondInput = document.querySelectorAll("input[type='radio']");
+    let calcDisplay = document.querySelector("textarea");
+    let calcButtons = document.querySelector(".calculator__buttons");
+    let calcReset = document.querySelector(".calculator__reset");
+    let calcDelete = document.querySelector(".calculator__delete");
+    let calcEquals = document.querySelector(".calculator__equals");
+    let label = document.querySelector(".label");
+    let ball = document.querySelector(".ball");
 
-Array.from(secondInput).forEach((input) => {
-    input.addEventListener("change", changeTheme);
-});
+    Array.from(secondInput).forEach((input) => {
+        input.addEventListener("change", changeTheme);
+    });
 
-function changeTheme(event) {
-    if (event.target.value === "theme-2") {
-        document.body.className += " body--theme-two";
-        calcDisplay.className += " calculator__display--theme-two";
-        calcButtons.className += " calculator__buttons--theme-two";
-        calcDelete.className += " calculator__delete--theme-two";
-        calcReset.className += " calculator__reset--theme-two";
-        calcEquals.className += " calculator__equals--theme-two";
-        label.className += " label__--theme-two";
-        ball.className += " ball__--theme-two";
-    } else if (event.target.value === "theme-3") {
-        document.body.className = document.body.className.replace(
-            "two",
-            "three"
-        );
-        calcDisplay.className = calcDisplay.className.replace("two", "three");
-        calcButtons.className = calcButtons.className.replace("two", "three");
-        calcDelete.className = calcDelete.className.replace("two", "three");
-        calcReset.className = calcReset.className.replace("two", "three");
-        calcEquals.className = calcEquals.className.replace("two", "three");
-        label.className = label.className.replace("two", "three");
-        ball.className = ball.className.replace("two", "three");
-    } else if (event.target.value === "theme-1") {
-        document.body.className = document.body.className.replace(
-            "body--theme-two",
-            ""
-        );
-        calcDisplay.className = calcDisplay.className.replace(
-            " calculator__display--theme-two",
-            ""
-        );
-        calcButtons.className = calcButtons.className.replace(
-            " calculator__buttons--theme-two",
-            ""
-        );
-        calcDelete.className = calcDelete.className.replace(
-            " calculator__delete--theme-two",
-            ""
-        );
-        calcReset.className = calcReset.className.replace(
-            " calculator__reset--theme-two",
-            ""
-        );
-        calcEquals.className = calcEquals.className.replace(
-            " calculator__equals--theme-two",
-            ""
-        );
-        label.className = label.className.replace(" label__--theme-two", "");
-        ball.className = ball.className.replace(" ball__--theme-two", "");
+    Array.from(secondInput).forEach((input) => {
+        checkTheme(input);
+    });
+
+    function checkTheme(e) {
+        let lastChecked = localStorage.getItem("input-last-checked");
+        switch (lastChecked) {
+            case "theme-1":
+                themeChange(e.value, "");
+                break;
+            case "theme-2":
+                themeChange(e.value, "--theme-two");
+                break;
+            case "theme-3":
+                themeChange(e.value, "--theme-three");
+                break;
+        }
+        console.log(e.value);
     }
-}
+
+    function themeChange(value, theme) {
+        if (value === "theme-1") {
+            document.body.className = "body";
+            calcDisplay.className = "calculator__display";
+            calcButtons.className = "calculator__buttons";
+            calcDelete.className = "calculator__delete";
+            calcReset.className = "calculator__reset";
+            calcEquals.className = "calculator__equals";
+            label.className = "label";
+            ball.className = "ball";
+        }
+        document.body.className = "body body" + theme;
+        calcDisplay.className =
+            "calculator__display calculator__display" + theme;
+        calcButtons.className =
+            "calculator__buttons calculator__buttons" + theme;
+        calcDelete.className = "calculator__delete calculator__delete" + theme;
+        calcReset.className = "calculator__reset calculator__reset" + theme;
+        calcEquals.className = "calculator__equals calculator__equals" + theme;
+        label.className = "label label__" + theme;
+        ball.className = "ball ball__" + theme;
+    }
+
+    function changeTheme(event) {
+        if (event.target.value === "theme-2") {
+            themeChange(event.target.value, "--theme-two");
+            localStorage.setItem("input-last-checked", event.target.value);
+        } else if (event.target.value === "theme-3") {
+            themeChange(event.target.value, "--theme-three");
+            localStorage.setItem("input-last-checked", event.target.value);
+        } else if (event.target.value === "theme-1") {
+            themeChange(event.target.value, "");
+            localStorage.setItem("input-last-checked", event.target.value);
+        }
+    }
+});
