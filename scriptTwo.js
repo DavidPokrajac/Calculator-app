@@ -12,21 +12,28 @@ document.addEventListener("DOMContentLoaded", () => {
         input.addEventListener("change", changeTheme);
     });
 
-    Array.from(secondInput).forEach((input) => {
+    /* Array.from(secondInput).forEach((input) => {
         checkTheme(input);
-    });
+    }); */
 
-    function checkTheme(e) {
+    checkTheme();
+
+    function checkTheme() {
+        let [inputOne, inputTwo, inputThree] = Array.from(secondInput);
+        console.log(inputOne);
         let lastChecked = localStorage.getItem("input-last-checked");
         switch (lastChecked) {
             case "theme-1":
-                themeChange(e.value, "");
+                themeChange(inputOne.value, "");
                 break;
             case "theme-2":
-                themeChange(e.value, "--theme-two");
+                themeChange(inputTwo.value, "--theme-two");
                 break;
             case "theme-3":
-                themeChange(e.value, "--theme-three");
+                themeChange(inputThree.value, "--theme-three");
+                break;
+            default:
+                themeChange(inputOne.value, "");
                 break;
         }
     }
