@@ -12,10 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
         input.addEventListener("change", changeTheme);
     });
 
-    /* Array.from(secondInput).forEach((input) => {
-        checkTheme(input);
-    }); */
-
     checkTheme();
 
     function checkTheme() {
