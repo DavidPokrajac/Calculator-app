@@ -16,8 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function checkTheme() {
         let [inputOne, inputTwo, inputThree] = Array.from(secondInput);
-        console.log(inputOne);
         let lastChecked = localStorage.getItem("input-last-checked");
+
         switch (lastChecked) {
             case "theme-1":
                 themeChange(inputOne.value, "");

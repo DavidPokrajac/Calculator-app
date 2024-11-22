@@ -23,8 +23,10 @@ function displayNumber(event) {
         return;
     }
 
-    result += target.textContent;
-    textArea.textContent += target.textContent;
+    if (isCalculated === false) {
+        result += target.textContent;
+        textArea.textContent += target.textContent;
+    }
 }
 
 function displayOperator(event) {
@@ -34,8 +36,10 @@ function displayOperator(event) {
         return;
     }
 
-    result += target.textContent;
-    textArea.textContent += target.textContent;
+    if (isCalculated === false) {
+        result += target.textContent;
+        textArea.textContent += target.textContent;
+    }
 
     for (let i = 0; i < textArea.textContent.length; i++) {
         switch (textArea.textContent[i]) {
@@ -66,9 +70,14 @@ function displayOperator(event) {
 }
 
 equalsTo.addEventListener("click", () => {
-    checkLastValue(textArea.textContent[textArea.textContent.length - 1]);
-    textArea.textContent = eval(result);
-    isCalculated = true;
+    if (
+        checkLastValue(result[result.length - 1]) !== result[result.length - 1]
+    ) {
+        textArea.textContent = eval(textArea.textContent);
+        isCalculated = true;
+    } else {
+        return;
+    }
 });
 
 function reset() {
@@ -95,6 +104,7 @@ function del() {
         }
     }
 
+    result = result.replace(result[result.length - 1], "");
     textArea.textContent = textArea.textContent.replace(
         textArea.textContent[textArea.textContent.length - 1],
         ""
@@ -109,6 +119,6 @@ function checkLastValue(value) {
         value === "/" ||
         value === "."
     ) {
-        return;
+        return value;
     }
 }
